@@ -10,6 +10,9 @@ Kloon het volgende project van GitHub:
 In het project vinden we alles wat we nodig hebben om te kunnen 
 beginnen met bouwen, inclusief documentatie en demo-code.
 
+Eventueel kun je ook een Spring starter-project gebruiken: 
+[LangChain4J Spring Starterprojecten](https://github.com/langchain4j/langchain4j-spring)
+
 ## Dependencies
 
 We hebben voor de opdracht de volgende dependencies nodig, die al zijn opgenomen
