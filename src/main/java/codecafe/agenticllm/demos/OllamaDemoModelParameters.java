@@ -2,6 +2,7 @@
  * OllamaDemoModelParameters.java
  * <p>
  * Previous: OllamaConnectionChatMemory
+ * Next: OllamaDemoTools
  * <p>
  * In this demo, we look at the influence of the model parameters.
  * Ideally, we would work with a maximum number of output tokens as well.
