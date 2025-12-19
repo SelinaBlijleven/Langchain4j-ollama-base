@@ -3,7 +3,7 @@
  * <p>
  * Contains a few variations of models for different demos.
  */
-package demoblocks;
+package codecafe.agenticllm.demoblocks;
 
 import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.ollama.OllamaChatModel;

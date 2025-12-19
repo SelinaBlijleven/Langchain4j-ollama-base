@@ -10,7 +10,7 @@
  */
 package codecafe.agenticllm.demos;
 
-import demoblocks.OllamaDemoModels;
+import codecafe.agenticllm.demoblocks.OllamaDemoModels;
 import dev.langchain4j.model.chat.ChatModel;
 
 public class OllamaConnectionDemo {

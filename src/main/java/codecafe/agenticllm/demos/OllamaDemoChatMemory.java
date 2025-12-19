@@ -13,7 +13,7 @@
  */
 package codecafe.agenticllm.demos;
 
-import demoblocks.OllamaDemoModels;
+import codecafe.agenticllm.demoblocks.OllamaDemoModels;
 import dev.langchain4j.data.message.AiMessage;
 import dev.langchain4j.data.message.SystemMessage;
 import dev.langchain4j.data.message.UserMessage;
