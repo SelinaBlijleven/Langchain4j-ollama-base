@@ -2,6 +2,7 @@
  * OllamaDemoMessageMemory.java
  * <p>
  * Previous: OllamaDemoLocalMessageHistory
+ * Next: OllamaDemoModelParameters
  * <p>
  * Now that we know what a message looks like, we can start looking
  * at the ChatMemory primitive. We will also have our first look

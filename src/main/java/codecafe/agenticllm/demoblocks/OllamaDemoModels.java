@@ -19,4 +19,24 @@ public class OllamaDemoModels {
                 .temperature(0.2)
                 .build();
     }
+
+    public static ChatModel poeticModel() {
+        return OllamaChatModel.builder()
+                // change if Ollama is on another host / port
+                .baseUrl("http://localhost:11434")
+                // must match models installed with `ollama list`
+                .modelName("gemma3:4b")
+                .temperature(1.0)
+                .build();
+    }
+
+    public static ChatModel seriousModel() {
+        return OllamaChatModel.builder()
+                // change if Ollama is on another host / port
+                .baseUrl("http://localhost:11434")
+                // must match models installed with `ollama list`
+                .modelName("gemma3:4b")
+                .temperature(0.0)
+                .build();
+    }
 }

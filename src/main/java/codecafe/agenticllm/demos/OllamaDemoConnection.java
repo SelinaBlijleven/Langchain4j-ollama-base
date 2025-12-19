@@ -13,7 +13,7 @@ package codecafe.agenticllm.demos;
 import codecafe.agenticllm.demoblocks.OllamaDemoModels;
 import dev.langchain4j.model.chat.ChatModel;
 
-public class OllamaConnectionDemo {
+public class OllamaDemoConnection {
 
     public void demo() {
         // Load demo model through Ollama: gemma3:4b
@@ -30,6 +30,6 @@ public class OllamaConnectionDemo {
 
 
     public static void main(String[] args) {
-        new OllamaConnectionDemo().demo();
+        new OllamaDemoConnection().demo();
     }
 }

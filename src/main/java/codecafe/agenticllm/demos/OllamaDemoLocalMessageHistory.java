@@ -1,7 +1,8 @@
 /**
  * OllamaDemoMessageHistory.java
  * <p>
- * Previous: OllamaConnectionDemo
+ * Previous: OllamaDemoConnection
+ * Next: OllamaDemoChatMemory
  * <p>
  * LLM's are inherently stateless. This means we need to manage
  * the conversation history somehow. LangChain4J uses the AIMessage
