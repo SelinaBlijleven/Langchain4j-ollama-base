@@ -27,6 +27,12 @@ opzetten! In het startproject gebruiken we Apache Maven als package manager.
 Voor deze opdracht maken we gebruik van [LangChain4J](https://docs.langchain4j.dev/), een onofficiële 
 implementatie van het populaire [LangChain framework](https://www.langchain.com/) voor Python en TypeScript.
 
+LangChain4j is nog niet helemaal volledig, waardoor sommige details iets lastiger zijn om te 
+implementeren. Deze repository bevat daarom ook veel code die dat een stukje makkelijker maakt. 
+De demo's laten steeds kleine beetjes zien van wat er mogelijk is en de uitdaging ligt hem in de 
+onderdelen combineren om LLM's optimaal te benutten. Deze code mag je dan ook beschouwen 
+als bouwblokken en je mag deze code hergebruiken en aanpassen.
+
 ## Volgende stap
 
 Je kunt nu door naar stap 2: [Project Setup], of je nog even verder inlezen 
