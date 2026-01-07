@@ -11,11 +11,11 @@ import java.util.List;
 
 public class EmbeddingStoreBuilder {
 
-    EmbeddingStore<TextSegment> embeddingStore;
+    // Simple InMemory implementation, but we could use different types of embedding stores for this.
+    InMemoryEmbeddingStore<TextSegment> embeddingStore;
 
     public EmbeddingStoreBuilder() {
-        // Simple InMemory implementation, but we could use different types of embedding stores for this.
-        InMemoryEmbeddingStore<TextSegment> embeddingStore = new InMemoryEmbeddingStore<>();
+        embeddingStore = new InMemoryEmbeddingStore<>();
     }
 
     public static EmbeddingStore<TextSegment> fromPath(String path) {
