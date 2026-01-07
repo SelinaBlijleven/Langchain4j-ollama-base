@@ -15,7 +15,7 @@
  */
 package codecafe.agenticllm.demos;
 
-import codecafe.agenticllm.models.OllamaDemoAssistantFactory;
+import codecafe.agenticllm.models.OllamaDemoAssistantBuilder;
 import codecafe.agenticllm.services.StreamingAssistant;
 import codecafe.agenticllm.streaming.StreamingRunner;
 import codecafe.agenticllm.tools.CalculatorTool;
@@ -25,31 +25,29 @@ public class OllamaDemoTools {
 
     public void demo() throws InterruptedException {
         // Get the base initialization out of the way
-        OllamaDemoAssistantFactory assistantFactory = new OllamaDemoAssistantFactory();
+        OllamaDemoAssistantBuilder assistantBuilder = new OllamaDemoAssistantBuilder();
 
         // Let's also bring back the system message, which can also
         // be added to the AI services!
-        assistantFactory.systemMessage("You are a helpful assistant with access " +
-                "to tools. Respond with a maximum of two sentences and use tools when needed.");
-
         // LangChain4j uses .systemMessageProvider, but we will use a set system
         // message for now. You can give this any type of function that
         // would help you include relevant details, such as the date/time and location of the user.
+        assistantBuilder.systemMessage("You are a helpful assistant with access " +
+                "to tools. Respond with a maximum of two sentences and use tools when needed.");
 
         // We can create tools two ways. I would recommend the second
         // method, but it is nice to see what the specification looks like:
         // we are kind of providing it with documentation!
-        weatherDemo(assistantFactory);
-        calculatorDemo(assistantFactory);
+        weatherDemo(assistantBuilder);
+        calculatorDemo(assistantBuilder);
     }
 
-    public void weatherDemo(OllamaDemoAssistantFactory assistantFactory) throws InterruptedException {
+    public void weatherDemo(OllamaDemoAssistantBuilder assistantFactory) throws InterruptedException {
         // Method 1. With an explicit tool specification and object with a matching function
         WeatherTool weatherTool = new WeatherTool();
-        assistantFactory.tools(weatherTool.specification(), weatherTool);
-
-        // Let's test them out!
-        StreamingAssistant assistant = assistantFactory.build();
+        StreamingAssistant assistant = assistantFactory
+                .tools(weatherTool.specification(), weatherTool)
+                .build();
 
         // Sadly, our LLM might still ignore the instruction to use the tool.
         String prompt = "You do not know the weather yourself. Use tools if needed. What is the weather in London? Use the getWeather function";
@@ -60,12 +58,13 @@ public class OllamaDemoTools {
         StreamingRunner.run(assistant, prompt);
     }
 
-    public void calculatorDemo(OllamaDemoAssistantFactory assistantFactory) throws InterruptedException {
+    public void calculatorDemo(OllamaDemoAssistantBuilder assistantFactory) throws InterruptedException {
         // Method 2. With the @Tool annotation, which will handle the tool specification for us!
-        assistantFactory.tools(new CalculatorTool());
+        StreamingAssistant assistant = assistantFactory
+                .tools(new CalculatorTool())
+                .build();
 
         // Let's test
-        StreamingAssistant assistant = assistantFactory.build();
         String prompt = "Calculate 18 + 29 without doing it yourself";
         System.out.println("User: " + prompt + "\n\n");
         System.out.println("Assistant:\n");

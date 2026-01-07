@@ -9,16 +9,17 @@ package codecafe.agenticllm.models;
 import codecafe.agenticllm.services.StreamingAssistant;
 import dev.langchain4j.memory.ChatMemory;
 import dev.langchain4j.memory.chat.MessageWindowChatMemory;
+import dev.langchain4j.rag.content.retriever.ContentRetriever;
 import dev.langchain4j.service.AiServices;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class OllamaDemoAssistantFactory {
+public class OllamaDemoAssistantBuilder {
 
     private final AiServices<StreamingAssistant> builder;
 
-    public OllamaDemoAssistantFactory() {
+    public OllamaDemoAssistantBuilder() {
         // Memory store, which we need for AI Services (required for @MemoryId in the StreamingAssistant interface)
         Map<Integer, ChatMemory> memories = new ConcurrentHashMap<>();
 
@@ -29,16 +30,28 @@ public class OllamaDemoAssistantFactory {
                 .chatMemoryProvider(id -> memories.computeIfAbsent((Integer) id, _ -> MessageWindowChatMemory.withMaxMessages(10)));
     }
 
-    public void tools(Object assistantTool) {
+    public OllamaDemoAssistantBuilder tools(Object assistantTool) {
         builder.tools(assistantTool);
+        // allow chaining
+        return this;
     }
 
-    public void tools(Object... assistantTools) {
+    public OllamaDemoAssistantBuilder tools(Object... assistantTools) {
         builder.tools(assistantTools);
+        // allow chaining
+        return this;
     }
 
-    public void systemMessage(String systemMsg) {
+    public OllamaDemoAssistantBuilder systemMessage(String systemMsg) {
         builder.systemMessageProvider(_ -> systemMsg);
+        // allow chaining
+        return this;
+    }
+
+    public OllamaDemoAssistantBuilder contentRetriever(ContentRetriever contentRetriever) {
+        builder.contentRetriever(contentRetriever);
+        // allow chaining
+        return this;
     }
 
     public StreamingAssistant build() {
