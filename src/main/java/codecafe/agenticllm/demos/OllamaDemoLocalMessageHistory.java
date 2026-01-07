@@ -15,7 +15,7 @@
  */
 package codecafe.agenticllm.demos;
 
-import codecafe.agenticllm.demoblocks.OllamaDemoModels;
+import codecafe.agenticllm.models.OllamaDemoModels;
 import dev.langchain4j.data.message.AiMessage;
 import dev.langchain4j.data.message.ChatMessage;
 import dev.langchain4j.data.message.UserMessage;
