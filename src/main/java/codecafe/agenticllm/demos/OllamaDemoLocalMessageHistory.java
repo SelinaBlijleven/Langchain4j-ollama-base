@@ -8,7 +8,7 @@
  * the conversation history somehow. LangChain4J uses the AIMessage
  * and UserMessage primitives for this.
  * <p>
- * In this demo we take a closer look at how they function, so
+ * In this demo, we take a closer look at how they function, so
  * we can understand the chat history better.
  *
  * @author   Lina Blijleven <selina.blijleven@code-cafe.nl>

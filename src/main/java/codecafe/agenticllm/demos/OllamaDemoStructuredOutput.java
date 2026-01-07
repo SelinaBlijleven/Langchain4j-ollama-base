@@ -2,9 +2,10 @@
  * OllamaDemoStructuredOutput.java
  * <p>
  * Previous: OllamaDemoRAG
- * Next: OllamaGuardRails
  * <p>
  * @TODO: Demo on structured output
+ * This is the last demo for the mini course, but the LangChain4J framework still offers
+ * more to explore :)
  * <p>
  * https://docs.langchain4j.dev/tutorials/structured-outputs
  *

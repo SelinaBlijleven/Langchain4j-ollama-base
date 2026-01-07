@@ -1,7 +1,7 @@
 /**
  * OllamaDemoTools.java
  * <p>
- * Previous: OllamaDemoModelParameters
+ * Previous: OllamaDemoResponseStreaming
  * Next: OllamaDemoRAG
  * <p>
  * @TODO: Demo on LLM tools
