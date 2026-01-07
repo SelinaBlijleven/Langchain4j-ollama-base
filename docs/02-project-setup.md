@@ -51,7 +51,7 @@ deze specifieke applicatie i.v.m. het gemak van integratie.
 Instructies voor Ollama:
 
 1. Download het programma
-2. Download model `gemma3:4b` (deze wordt gebruikt in de demo-code)
+2. Download model `qwen3:4b` (deze wordt gebruikt in de demo-code en ondersteunt tools)
 3. Ga naar de 'Settings' en maak Ollama beschikbaar voor lokale ontwikkeling
 
 ![Ollama instelling](ollama-network.png)
