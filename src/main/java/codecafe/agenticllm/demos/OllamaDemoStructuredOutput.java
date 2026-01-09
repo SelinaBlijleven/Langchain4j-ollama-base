@@ -5,6 +5,9 @@
  * <p>
  * This is the last demo for the mini course, but the LangChain4J framework still offers
  * more to explore :)
+ * Since LLMs aren't very predictable in nature, you might see the model retry up
+ * to twice: we might see these warnings in the output. We also provide a system prompt
+ * to guide the model in the right direction.
  * <p>
  * https://docs.langchain4j.dev/tutorials/structured-outputs
  *
