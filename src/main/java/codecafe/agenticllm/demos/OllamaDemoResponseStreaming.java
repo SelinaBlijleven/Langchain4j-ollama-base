@@ -21,7 +21,7 @@
  */
 package codecafe.agenticllm.demos;
 
-import codecafe.agenticllm.models.OllamaDemoAssistantBuilder;
+import codecafe.agenticllm.services.OllamaStreamingAssistantBuilder;
 import codecafe.agenticllm.services.StreamingAssistant;
 
 import codecafe.agenticllm.streaming.StreamingRunner;
@@ -33,7 +33,7 @@ public class OllamaDemoResponseStreaming {
         // To facilitate easy use, the AssistantFactory will be used from now on
         // to handle building different services with different needs, while reducing
         // boilerplate.
-        StreamingAssistant assistant = new OllamaDemoAssistantBuilder().build();
+        StreamingAssistant assistant = new OllamaStreamingAssistantBuilder().build();
 
         String prompt = "Write a detailed recipe for chocolate chip pancakes.";
         System.out.println("User: " + prompt + "\n\n");

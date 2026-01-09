@@ -15,7 +15,7 @@
  */
 package codecafe.agenticllm.demos;
 
-import codecafe.agenticllm.models.OllamaDemoAssistantBuilder;
+import codecafe.agenticllm.services.OllamaStreamingAssistantBuilder;
 import codecafe.agenticllm.services.StreamingAssistant;
 import codecafe.agenticllm.streaming.StreamingRunner;
 import codecafe.agenticllm.tools.CalculatorTool;
@@ -25,7 +25,7 @@ public class OllamaDemoTools {
 
     public void demo() throws InterruptedException {
         // Get the base initialization out of the way
-        OllamaDemoAssistantBuilder assistantBuilder = new OllamaDemoAssistantBuilder();
+        OllamaStreamingAssistantBuilder assistantBuilder = new OllamaStreamingAssistantBuilder();
 
         // Let's also bring back the system message, which can also
         // be added to the AI services!
@@ -42,7 +42,7 @@ public class OllamaDemoTools {
         calculatorDemo(assistantBuilder);
     }
 
-    public void weatherDemo(OllamaDemoAssistantBuilder assistantFactory) throws InterruptedException {
+    public void weatherDemo(OllamaStreamingAssistantBuilder assistantFactory) throws InterruptedException {
         // Method 1. With an explicit tool specification and object with a matching function
         WeatherTool weatherTool = new WeatherTool();
         StreamingAssistant assistant = assistantFactory
@@ -58,7 +58,7 @@ public class OllamaDemoTools {
         StreamingRunner.run(assistant, prompt);
     }
 
-    public void calculatorDemo(OllamaDemoAssistantBuilder assistantFactory) throws InterruptedException {
+    public void calculatorDemo(OllamaStreamingAssistantBuilder assistantFactory) throws InterruptedException {
         // Method 2. With the @Tool annotation, which will handle the tool specification for us!
         StreamingAssistant assistant = assistantFactory
                 .tools(new CalculatorTool())

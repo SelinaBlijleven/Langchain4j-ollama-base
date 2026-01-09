@@ -16,7 +16,7 @@
  */
 package codecafe.agenticllm.demos;
 
-import codecafe.agenticllm.models.OllamaDemoAssistantBuilder;
+import codecafe.agenticllm.services.OllamaStreamingAssistantBuilder;
 import codecafe.agenticllm.rag.EmbeddingStoreBuilder;
 import codecafe.agenticllm.services.StreamingAssistant;
 import codecafe.agenticllm.streaming.StreamingRunner;
@@ -35,7 +35,7 @@ public class OllamaDemoRAG {
         // so there is no need for embedding APIs.
         EmbeddingStore<TextSegment> embeddingStore = EmbeddingStoreBuilder.fromPath(documentPath);
 
-        StreamingAssistant assistant = new OllamaDemoAssistantBuilder()
+        StreamingAssistant assistant = new OllamaStreamingAssistantBuilder()
                 .systemMessage("You are an experienced HR professional who handles questions from new employees " +
                         "of De Fruitkar. Help them learn about the company and keep it wholesome and positive.")
                 .contentRetriever(EmbeddingStoreContentRetriever.from(embeddingStore))
