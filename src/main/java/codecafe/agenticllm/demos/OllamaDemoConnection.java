@@ -1,6 +1,7 @@
 /**
  * OllamaConnectionDemo.java
  * <p>
+ * Next: OllamaDemoLocalMessageHistory
  * The first step to using a language model with LangChain4J
  * and Ollama.
  * <p>
@@ -18,14 +19,13 @@ public class OllamaDemoConnection {
     public void demo() {
         // Load demo model through Ollama: gemma3:4b
         ChatModel model = OllamaDemoModels.defaultModel();
+        String prompt = "How are you doing bestie?";
 
-        // We can call the chat model with a string
-        String response = model.chat(
-                "How are you doing bestie?"
-        );
+        // We can call the chat model with a string,
+        String response = model.chat(prompt);
 
-        System.out.println("Response:");
-        System.out.println(response);
+        System.out.println("User: " + prompt);
+        System.out.println("AI: \n" + response);
     }
 
 

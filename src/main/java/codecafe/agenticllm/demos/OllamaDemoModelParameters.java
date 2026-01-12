@@ -69,11 +69,11 @@ public class OllamaDemoModelParameters {
 
         // Serious model responds first
         String ai2 = seriousResponse(userMsg);
-        System.out.print("Low temperature and asked to respond like a researcher in max 20 words:\n" + ai2 + "\n");
+        System.out.print("[Low temperature and asked to respond like a researcher in max 20 words:]\n" + ai2 + "\n\n");
 
         // Poetic model responds later and takes longer, due to the length.
         String ai3 = poeticResponse(userMsg);
-        System.out.print("High temperature, asked to respond like a wordy poet:\n" + ai3 + "\n");
+        System.out.print("[High temperature, asked to respond like a wordy poet:]\n" + ai3 + "\n");
     }
 
     public static void main(String[] args) {

@@ -34,7 +34,7 @@ public class OllamaDemoLocalMessageHistory {
         List<ChatMessage> history = new ArrayList<>();
 
         // User starts the conversation
-        String userMsg1 = "How can we manage message history with LangChain4J in max. 100 words?";
+        String userMsg1 = "How can we manage message history with LangChain4J? Explain in max. 100 words.";
         System.out.print("User:\n" + userMsg1 + "\n");
         history.add(UserMessage.from(userMsg1));
 

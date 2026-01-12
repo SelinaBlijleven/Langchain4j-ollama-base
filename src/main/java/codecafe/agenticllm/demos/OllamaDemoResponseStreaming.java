@@ -8,6 +8,7 @@
  * This is fine for short responses, but not so great for deeper research. In this demo,
  * we tackle this with response streaming.
  * <p>
+ * !!! WARNING !!!
  * The following article describes response streaming with LangChain, but
  * this is NOT implemented yet.
  * https://docs.langchain4j.dev/tutorials/response-streaming
@@ -30,16 +31,15 @@ public class OllamaDemoResponseStreaming {
 
     public void demo() throws InterruptedException {
         // We now need to create an AI assistant using AI services
-        // To facilitate easy use, the AssistantFactory will be used from now on
-        // to handle building different services with different needs, while reducing
-        // boilerplate.
+        // We use a helper class to create the streaming assistant, since this is
+        // a non-trivial task.
         StreamingAssistant assistant = new OllamaStreamingAssistantBuilder().build();
 
         String prompt = "Write a detailed recipe for chocolate chip pancakes.";
         System.out.println("User: " + prompt + "\n\n");
 
         // Create and run the stream to get a response
-        System.out.println("Assistant: \n");
+        System.out.println("AI: \n");
         StreamingRunner.run(assistant, prompt);
     }
 

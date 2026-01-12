@@ -34,18 +34,17 @@ public class OllamaDemoChatMemory {
         memory.add(SystemMessage.from("You are a helpful Java instructor who loves speaking in Gen Z slang."));
 
         // User starts the conversation
-        String userMsg1 = "How can we manage message history with LangChain4J in max. 100 words?";
+        String userMsg1 = "How can we manage message history with LangChain4J? Explain in max. 100 words.";
         System.out.print("User:\n" + userMsg1 + "\n\n");
         memory.add(UserMessage.from(userMsg1));
 
         // We use the chat function with the message memory
+        // Note that the system message is also included in this!
         AiMessage aiResponse = model.chat(memory.messages()).aiMessage();
         memory.add(aiResponse);
 
-        System.out.print("Assistant:\n" + aiResponse.text() + "\n");
+        System.out.print("AI:\n" + aiResponse.text() + "\n");
     }
 
-    public static void main(String[] args) {
-        new OllamaDemoChatMemory().demo();
-    }
+    public static void main(String[] args) { new OllamaDemoChatMemory().demo(); }
 }
