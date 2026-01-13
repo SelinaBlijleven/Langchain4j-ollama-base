@@ -4,8 +4,6 @@
  * Previous: OllamaDemoTools
  * Next: OllamaDemoStructuredOutput
  * <p>
- * @TODO: DEBUG
- * @TODO: log4j?
  * Implementation of easy RAG, so we can quickly see results. This will be very
  * interesting to expand on if you are implementing the researcher.
  * <p>
