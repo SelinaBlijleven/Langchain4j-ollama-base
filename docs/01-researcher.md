@@ -25,6 +25,27 @@ Implementeer Retrieval-Augmented Generation op het internet (via een zoekmachine
 interne documenten (kun je ook laten genereren). Een intern geheugen kan handig zijn, 
 maar uitgebreidere kennisbanken zijn in dit geval praktischer.
 
+Gesuggereerde aanpak:
+
+1. Zorg dat je eerst de [project setup-stappen](02-project-setup.md) hebt uitgevoerd.
+2. Implementeer eerst een chatbot vergelijkbaar met de eerste demo, `OllamaDemoConnection`.
+3. Zorg nu dat je chatbot de gespreksgeschiedenis onthoudt. Hiervoor kun je kijken naar
+   `OllamaDemoLocalMessageHistory` en `OllamaDemoChatMemory`.
+4. Schrijf een systeemprompt voor een LLM die antwoord kan geven op basis van opgevraagde 
+interne/externe informatie. Hiervoor kun je inspiratie opdoen 
+uit [systeemprompts van grote aanbieders](https://github.com/0xeb/TheBigPromptLibrary/blob/main/SystemPrompts/) 
+en [agent instructies](https://github.com/0xeb/TheBigPromptLibrary/tree/main/CustomInstructions/ChatGPT).
+5. Bedenk welke LLM-temperatuur goed aansluit bij je eerste karakter en stel deze in
+   bij het aanmaken van het ChatModel. (Zie `OllamaDemoModelParameters`).
+6. Lees interne of externe documenten in een EmbeddingStore. Je mag hiervoor uiteraard 
+`OllamaDemoRAG` en `EmbeddingStoreBuilder`.
+7. Test je onderzoeker met vragen die in je documenten voorkomen, of juist over 
+een heel ander onderwerp gaan.
+
+Breid je onderzoeker verder uit naar wens. Bijvoorbeeld met extra tools, 
+gestructureerde output, een extra LLM die het antwoord evalueert, 
+een "dieper nadenken"-modus of wat je verder interessant vindt!
+
 ## Tips
 
 - Kies één vorm van RAG om hier niet te veel tijd aan kwijt te zijn.
